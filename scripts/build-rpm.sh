@@ -24,7 +24,7 @@ sed \
   SPECS/bcc.spec > $TMP/SPECS/bcc.spec
 
 pushd $TMP
-rpmbuild --define "_topdir `pwd`" -ba SPECS/bcc.spec
+rpmbuild --nodeps --define "_topdir `pwd`" -ba SPECS/bcc.spec
 popd
 
 cp $TMP/RPMS/*/*.rpm .
